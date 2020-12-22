@@ -33,7 +33,8 @@ export default function usePizza({ pizzas, values }) {
     console.log(e);
     setLoading(true);
     setError(null);
-    setMessage(null);
+    setMessage('Go eat');
+
     // gather all the data
     const body = {
       order: attachNamesAndPrices(order, pizzas),

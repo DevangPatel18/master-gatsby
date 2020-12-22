@@ -12,7 +12,11 @@ import PizzaOrder from '../components/PizzaOrder';
 import calculateOrderTotal from '../utils/calculuateOrderTotal';
 
 export default function OrderPage({ data }) {
-  const { values, updateValue } = useForm({ name: '', email: '' });
+  const { values, updateValue } = useForm({
+    name: '',
+    email: '',
+    maplesyrup: '',
+  });
   const pizzas = data.pizzas.nodes;
   const {
     order,
@@ -52,6 +56,15 @@ export default function OrderPage({ data }) {
               name="email"
               value={values.email}
               onChange={updateValue}
+            />
+          </label>
+          <label htmlFor="mapleSyrup">
+            <input
+              type="mapleSyrup"
+              name="mapleSyrup"
+              value={values.mapleSyrup}
+              onChange={updateValue}
+              className="mapleSyrup"
             />
           </label>
         </fieldset>
